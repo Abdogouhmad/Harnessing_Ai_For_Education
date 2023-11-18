@@ -1,0 +1,28 @@
+\documentclass[a4paper, 12pt]{report}
+%styling the doc
+\linespread{2}
+\usepackage[none]{hyphenat} % prevent hyphenation
+\usepackage{indentfirst} % for the indentatiom
+\usepackage[document]{ragged2e}
+%end of styling
+\usepackage{sectsty} % for section
+% \sectionfont{\underline} % for underline
+\usepackage{fontspec} % for font
+\usepackage{hyperref} % for hyperlinks
+\usepackage{geometry}
+\geometry{top=1.5cm,bottom=1.5cm,left=2cm,right=2cm} % margins
+\usepackage{graphicx} % for images
+% \renewcommand{\thesection}{\Roman{section}} % roman numerals
+\setmainfont{Times New Roman} %fontspec
+\usepackage{forest} % for daigramtrees
+\usepackage{dirtytalk} % for quotation
+\newcommand{\mydate}{June 2024}
+\begin{document}
+\pagenumbering{arabic}
+\input{cover/mycover.tex}
+% \tableofcontents
+% \newpage
+% \chapter{Introduction}
+% \input{chap1/chapter1.tex}
+\end{document}
+
