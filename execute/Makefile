@@ -30,6 +30,8 @@ clean: build
 	@rm -f *.aux *.log *.out *.toc *.xdv *.fls *.fdb_latexmk  *.bbl *.blg  *.bcf *.xml >/dev/null 2>&1
 	@if [ $$? -eq 0 ]; then \
 		printf "${GREEN}Done!${NC}\n"; \
+		sleep 1; \
+		clear; \
 	else \
 		printf "${RED}Error!${NC}\n"; \
 	fi
