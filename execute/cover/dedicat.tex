@@ -1,0 +1,23 @@
+\newenvironment{dedication}
+{%\clearpage           % we want a new page          %% I commented this
+    \thispagestyle{empty}% no header and footer
+    \vspace*{\stretch{1}}% some space at the top
+    \itshape             % the text is in italics
+    \centering        % flush to the right margin
+}
+{\par % end the paragraph
+    \vspace{\stretch{3}} % space at bottom is three times that at the top
+    \clearpage           % finish off the page
+}
+
+\section*{}
+\addcontentsline{toc}{section}{Dedication}
+\begin{dedication}{DEDCATION}
+    \\
+    With the guidance and blessing of ALLAH SWT, I embark on the journey of
+    completing this research paper. I wholeheartedly dedicate this work to my cherished
+    family---a source of unconditional love, inspiration, motivation, and support
+    throughout my life. Their steady belief in my attempts has been
+    a beacon of strength and hope. To my dearest family, your unshakable faith in me
+    is the mainspring of my achievements. I am eternally grateful.
+\end{dedication}
