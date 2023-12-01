@@ -1,0 +1,22 @@
+
+\newenvironment{myabstract}
+{%\clearpage           % we want a new page          %% I commented this
+    \thispagestyle{empty}% no header and footer
+    \vspace*{\stretch{2}}% some space at the top
+    %\itshape       % the text is in italics
+    % \centering
+    \justifying      % flush to the right margin
+}
+{\par % end the paragraph
+    \vspace{\stretch{3}} % space at bottom is three times that at the top
+    \clearpage           % finish off the page
+}
+
+\section*{}
+\addcontentsline{toc}{section}{\textbf{Abstract}}
+\begin{myabstract}
+    \begin{center}
+        {\textbf{ABSTRACT}}
+    \end{center}
+    This an abstract of my research paper.
+\end{myabstract}
