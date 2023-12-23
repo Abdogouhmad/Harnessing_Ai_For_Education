@@ -11,19 +11,19 @@ PROGRAM = main.tex
 CC = xelatex
 XFLAGS = -file-line-error
 BIB = bibtex
-BIBPRO = ts
-
+BIBPRO = simple.bib
 # Usage: make custom_build PROGRAM=<custom_program.tex>
 build: $(PROGRAM)
 	@printf "${MAGENTA}Building custom program...${NC}\n"
-	@$(CC) $(XFLAGS) $(PROGRAM) 
+	@$(CC) $(XFLAGS) $(PROGRAM) > /dev/null 2>&1
+	@$(BIB) main 
+	@$(CC) $(XFLAGS) $(PROGRAM) > /dev/null 2>&1
 	@$(CC) $(XFLAGS) $(PROGRAM) > /dev/null 2>&1
 	@if [ $$? -eq 0 ]; then \
 		printf "${GREEN}Custom build completed${NC}\n"; \
 	else \
 		printf "${RED}Error in custom build!${NC}\n"; \
 	fi
-
 
 clean: build
 	@printf "${RED}Cleaning...${NC}\n"

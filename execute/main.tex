@@ -16,6 +16,8 @@
 \setmainfont{Times New Roman} %fontspec
 \usepackage{forest} % for daigramtrees
 \usepackage{dirtytalk} % for quotation
+\usepackage{natbib} % for bibliography
+\renewcommand{\bibname}{References}
 \newcommand{\mydate}{June 2024}
 
 \begin{document}
@@ -26,5 +28,12 @@
 \input{firstpages/dedicat.tex}
 \input{firstpages/acknowledgement.tex}
 \input{firstpages/abstract.tex}
+\input{chap1/chapter1.tex}
+% bibliography 
+
+\bibliographystyle{apalike} % Choose your bibliography style
+\bibliography{review} % Specify your .bib file (without the extension)
+
+
 \end{document}
 
