@@ -16,7 +16,7 @@ BIB = bibtex
 build: $(PROGRAM)
 	@printf "${MAGENTA}Building custom program...${NC}\n"
 	@$(CC) $(XFLAGS) $(PROGRAM)
-	@$(BIB) main 
+	# @$(BIB) main 
 	@$(CC) $(XFLAGS) $(PROGRAM) > /dev/null 2>&1
 	@$(CC) $(XFLAGS) $(PROGRAM) > /dev/null 2>&1
 	@if [ $$? -eq 0 ]; then \
@@ -35,6 +35,7 @@ clean: build
 	else \
 		printf "${RED}Error!${NC}\n"; \
 	fi
+
 
 
 pdf:

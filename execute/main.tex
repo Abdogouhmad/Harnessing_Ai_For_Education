@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{report}
+\documentclass[a4paper, 12pt]{book}
 %styling the doc
 \linespread{2}
 \usepackage[none]{hyphenat} % prevent hyphenation
@@ -9,8 +9,9 @@
 % \sectionfont{\underline} % for underline
 \usepackage{fontspec} % for font
 \usepackage{hyperref} % for hyperlinks
-\usepackage{geometry}
-\geometry{top=1.5cm,bottom=1.5cm,left=2cm,right=2cm} % margins
+
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} % margins
+\usepackage{lipsum}   % for dummy text
 \usepackage{graphicx} % for images
 % \renewcommand{\thesection}{\Roman{section}} % roman numerals
 \setmainfont{Times New Roman} %fontspec
@@ -28,7 +29,7 @@
 \input{firstpages/dedicat.tex}
 \input{firstpages/acknowledgement.tex}
 \input{firstpages/abstract.tex}
-\input{chap1/chapter1.tex}
+\input{intro/chapter1.tex}
 % bibliography 
 
 \bibliographystyle{apalike} % Choose your bibliography style
