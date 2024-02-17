@@ -10,3 +10,6 @@
 *.blg  
 *.bcf 
 *.xml
+.vscode/
+.idea/
+../.idea/
