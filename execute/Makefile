@@ -10,7 +10,7 @@ PROGRAM = main.tex
 # Compiler
 CC = xelatex
 XFLAGS = -file-line-error
-BIB = bibtex
+BIB = biber
 #BIBPRO = simple.bib
 # Usage: make custom_build PROGRAM=<custom_program.tex>
 build: $(PROGRAM)
@@ -36,7 +36,7 @@ clean:
 		printf "${RED}Error!${NC}\n"; \
 	fi
 
-
+all: clean build clean
 
 pdf:
 	@printf "${MAGENTA}Remove The PDF...${NC}\n"
