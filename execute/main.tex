@@ -1,28 +1,32 @@
-\documentclass[a4paper, 12pt]{book}
+\documentclass[a4paper, 12pt]{report}
 %styling the doc
 \linespread{2}
 \usepackage[none]{hyphenat} % prevent hyphenation
 \usepackage{indentfirst} % for the indentation
 \usepackage[document]{ragged2e}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} % margins
 %end of styling
-\usepackage{sectsty} % for section
-% \sectionfont{\underline} % for underline
+% images:
+\usepackage{graphicx} % for images
+% fonts:
 \usepackage{fontspec} % for font
 \setmainfont{Times New Roman} %fonts
+\usepackage{dirtytalk} % for quotation
 \usepackage{hyperref} % for hyperlinks
 %\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue pdftitle={Ai in higher education}} % color the links
-\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} % margins
+
+% dummy input:
 \usepackage{lipsum}   % for dummy text
-\usepackage{graphicx} % for images
 \usepackage{forest} % for daigramtrees
-\usepackage{dirtytalk} % for quotation
-% \usepackage{natbib} % for bibliography
+
+% customizations:
 \renewcommand{\bibname}{REFERENCES}
 \newcommand{\mydate}{June 2024}
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
   {\normalfont\huge\bfseries\centering}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 
+% bibliography 
 \usepackage[
   labelalpha=true,
   backend=biber,
@@ -33,6 +37,7 @@
 \addbibresource{References.bib}
 
 
+% start of the document
 \begin{document}
 \pagenumbering{arabic}
 \input{cover/mycover.tex}
@@ -42,11 +47,7 @@
 \input{firstpages/acknowledgement.tex}
 \input{firstpages/abstract.tex}
 \input{intro/chapter1.tex}
-% bibliography 
 
-
-% \bibliographystyle{apalike}
-% \bibliography{References} % Specify your .bib file (without the extension)
 
 
 \printbibliography[heading=bibintoc, title=REFERENCES]
