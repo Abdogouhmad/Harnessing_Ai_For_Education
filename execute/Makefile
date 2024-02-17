@@ -7,18 +7,18 @@ NC=\033[0m # No Color
 # Default program
 PROGRAM = main.tex
 
+# @rm -f *.aux *.log *.out *.toc *.xdv *.fls *.fdb_latexmk  *.bbl *.blg  *.bcf *.xml >/dev/null 2>&1
+
 # Compiler
-CC = xelatex
-XFLAGS = -file-line-error
-BIB = biber
+CC = latexmk
+XFLAGS = -f  -lualatex -halt-on-error
+# BIB = biber
 #BIBPRO = simple.bib
 # Usage: make custom_build PROGRAM=<custom_program.tex>
 build: $(PROGRAM)
 	@printf "${MAGENTA}Building custom program...${NC}\n"
 	@$(CC) $(XFLAGS) $(PROGRAM)
-	@$(BIB) main 
-	@$(CC) $(XFLAGS) $(PROGRAM) > /dev/null 2>&1
-	@$(CC) $(XFLAGS) $(PROGRAM) > /dev/null 2>&1
+	# @$(BIB) main 
 	@if [ $$? -eq 0 ]; then \
 		printf "${GREEN}Custom build completed${NC}\n"; \
 	else \
@@ -27,7 +27,7 @@ build: $(PROGRAM)
 
 clean: 
 	@printf "${RED}Cleaning...${NC}\n"
-	@rm -f *.aux *.log *.out *.toc *.xdv *.fls *.fdb_latexmk  *.bbl *.blg  *.bcf *.xml >/dev/null 2>&1
+	@latexmk -c >/dev/null 2>&1
 	@if [ $$? -eq 0 ]; then \
 		printf "${GREEN}Done!${NC}\n"; \
 		sleep 1; \
@@ -36,7 +36,7 @@ clean:
 		printf "${RED}Error!${NC}\n"; \
 	fi
 
-all: clean build clean
+all: build clean
 
 pdf:
 	@printf "${MAGENTA}Remove The PDF...${NC}\n"
