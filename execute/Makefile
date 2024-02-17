@@ -25,7 +25,7 @@ build: $(PROGRAM)
 		printf "${RED}Error in custom build!${NC}\n"; \
 	fi
 
-clean: build
+clean: 
 	@printf "${RED}Cleaning...${NC}\n"
 	@rm -f *.aux *.log *.out *.toc *.xdv *.fls *.fdb_latexmk  *.bbl *.blg  *.bcf *.xml >/dev/null 2>&1
 	@if [ $$? -eq 0 ]; then \

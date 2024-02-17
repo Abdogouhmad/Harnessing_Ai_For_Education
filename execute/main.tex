@@ -24,13 +24,12 @@
 \titleformat{\chapter}[display]
   {\normalfont\huge\bfseries\centering}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 
-% \usepackage[
-% backend=biber,
-% style=apa,
-% sorting=ynt
-% ]{biblatex}
+\usepackage[
+  style=apa,
+  sorting=ynt
+]{biblatex}
 
-% \addbibresource{References.bib}
+\addbibresource{References.bib}
 
 
 \begin{document}
@@ -45,7 +44,8 @@
 % bibliography 
 
 
-\bibliographystyle{apalike}
-\bibliography{References} % Specify your .bib file (without the extension)
+% \bibliographystyle{apalike}
+% \bibliography{References} % Specify your .bib file (without the extension)
 
+\printbibliography
 \end{document}
