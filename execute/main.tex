@@ -18,9 +18,20 @@
 \usepackage{forest} % for daigramtrees
 \usepackage{dirtytalk} % for quotation
 \usepackage{natbib} % for bibliography
-\renewcommand{\bibsection}{\chapter*{\bibname} \addcontentsline{toc}{chapter}{\bibname}}
-\renewcommand{\bibname}{References}
+\renewcommand{\bibname}{REFERENCES}
 \newcommand{\mydate}{June 2024}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\centering}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+% \usepackage[
+% backend=biber,
+% style=apa,
+% sorting=ynt
+% ]{biblatex}
+
+% \addbibresource{References.bib}
+
 
 \begin{document}
 \pagenumbering{arabic}
@@ -34,9 +45,7 @@
 % bibliography 
 
 
-
-\bibliographystyle{apalike} % Choose your bibliography style
+\bibliographystyle{apalike}
 \bibliography{References} % Specify your .bib file (without the extension)
-
 
 \end{document}
