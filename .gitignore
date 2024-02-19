@@ -1,0 +1,14 @@
+src/*.bbl
+src/*.aux 
+src/*.log 
+src/*.out 
+src/*.toc 
+src/*.xdv 
+src/*.fls 
+src/*.fdb_latexmk  
+src/*.bbl 
+src/*.blg  
+src/*.bcf 
+src/*.xml
+src/.vscode/
+.idea/
