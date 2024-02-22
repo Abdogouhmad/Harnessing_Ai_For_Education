@@ -11,13 +11,13 @@ PROGRAM = main.tex
 
 # Compiler
 CC = latexmk
-XFLAGS = -f  -lualatex -halt-on-error
+XFLAGS = -pdf -jobname=AbderrahmanGouhmad  -f  -lualatex -halt-on-error
 # BIB = biber
 #BIBPRO = simple.bib
 # Usage: make custom_build PROGRAM=<custom_program.tex>
 build: $(PROGRAM)
 	@printf "${MAGENTA}Building custom program...${NC}\n"
-	@$(CC) $(XFLAGS) $(PROGRAM) >/dev/null 2>&1
+	@$(CC) $(XFLAGS) $(PROGRAM)
 	# @$(BIB) main 
 	@if [ $$? -eq 0 ]; then \
 		printf "${GREEN}Custom build completed${NC}\n"; \
