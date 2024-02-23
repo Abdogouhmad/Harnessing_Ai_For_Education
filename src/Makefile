@@ -36,6 +36,10 @@ clean:
 		printf "${RED}Error!${NC}\n"; \
 	fi
 
+done:
+	@rm -f *.aux *.log *.out *.toc *.xdv *.fls *.fdb_latexmk  *.bbl *.blg  *.bcf *.xml >/dev/null 2>&1
+
+
 all: build clean
 
 pdf:
