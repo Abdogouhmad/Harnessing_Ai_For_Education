@@ -24,7 +24,8 @@
 % dummy input:
 \usepackage{lipsum}   % for dummy text
 \usepackage{forest} % for daigramtrees
-
+% for tables
+\usepackage{tabularx}
 % customizations:
 \renewcommand{\bibname}{REFERENCES}
 \newcommand{\mydate}{June 2024}
@@ -48,12 +49,12 @@
 
 \addbibresource{References.bib}
 
-
 % start of the document
 \begin{document}
 \pagenumbering{arabic}
 \input{cover/mycover}
 \tableofcontents
+\listoftables
 \newpage
 \input{firstpages/dedicat}
 \input{firstpages/acknowledgement}
@@ -61,6 +62,5 @@
 \input{chap1/chapter1}
 \input{chap2/chapter2}
 \input{chap3/chapter3}
-
 \printbibliography[heading=bibintoc, title=REFERENCES]
 \end{document}
