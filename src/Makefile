@@ -37,7 +37,7 @@ clean:
 	fi
 
 done:
-	@rm -f *.aux *.log *.out *.toc *.xdv *.fls *.fdb_latexmk  *.bbl *.blg  *.bcf *.xml >/dev/null 2>&1
+	@rm -f *.aux *.log *.out *.toc *.xdv *.fls *.fdb_latexmk  *.bbl *.blg  *.bcf *.xml *.lof *.lot *.bbl >/dev/null 2>&1
 
 
 all: build clean
