@@ -10,5 +10,7 @@ src/*.bbl
 src/*.blg  
 src/*.bcf 
 src/*.xml
+src/*.lof
+src/*.lot
 src/.vscode/
 .idea/
