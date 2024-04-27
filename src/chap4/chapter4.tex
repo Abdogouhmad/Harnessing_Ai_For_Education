@@ -55,8 +55,8 @@ affect their academic preformance to be declined while using it.
 		\pie [square, text=legend, color = {cyan!40, green!40, yellow!50, red!40, blue!40}]
 		{40/ Moderately engaged,
 			30/ Neutral,
-			21.7/ Highly engaged, 
-			6.7/ Not very engaged, 
+			21.7/ Highly engaged,
+			6.7/ Not very engaged,
 			1.7/ Not engaged at all }
 	\end{tikzpicture}
 	\captionof{figure}{Perceived academic engagement using AI-driven tools}
@@ -74,12 +74,35 @@ limitations or challenges associated with the implementation or usage of AI-driv
 
 \subsection{Challenges faced while using AI-driven tools in academic setting}
 
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=17cm, height=9cm]{./chap4/figures/chall}
+% 	\captionof{figure}{challenges faced when using AI-driven tools in academic setting}
+% \end{figure}
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=17cm, height=9cm]{./chap4/figures/chall}
+	\begin{tikzpicture}
+		\begin{axis}[
+				xbar,
+				y axis line style = { opacity = 0 },
+				axis x line       = none,
+				tickwidth         = 0pt,
+				ytick             = data,
+				enlarge y limits  = 0.1,
+				symbolic y coords = {Lack of access to reliable internet, Insufficient training, Concerns about privacy and data security, Resistance or skepticism from professors},
+				nodes near coords={\pgfmathprintnumber{\pgfplotspointmeta}\%},
+				nodes near coords align={horizontal},
+			]
+			\addplot[fill=red, draw=red] coordinates {
+					(48.3,Resistance or skepticism from professors)
+					(38.3,Insufficient training)
+					(28.3,Lack of access to reliable internet)
+					(26.7,Concerns about privacy and data security)};
+		\end{axis}
+	\end{tikzpicture}
 	\captionof{figure}{challenges faced when using AI-driven tools in academic setting}
 \end{figure}
-
 The bar chart shows the results of a survey on the challenges students
 face when using AI-driven tools in their academic studies. Out of 60 respondents,
 the biggest challenge was reported to be the resistance or skepticism from professors
@@ -92,12 +115,24 @@ A smaller percentage of students reported facing challenges with pricacy and dat
 with 26.7\%. while 2.3\% was bias, misinformation, propaganda in the AI tools and high prices of the AI-driven tools.
 
 \subsection{AI-driven tools and opportunities for improving learning experiences in the humanities }
-\begin{figure}[H]
-	\centering
-	\captionof{figure}{AI-driven tools and oppu}
-	\includegraphics[width=11cm, height=7cm]{./chap4/figures/op.png}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\captionof{figure}{AI-driven tools and oppu}
+% 	\includegraphics[width=11cm, height=7cm]{./chap4/figures/op.png}
+% \end{figure}
 
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\pie [rotate=180, explode=0.1, text=legend, color = {cyan!40, green!40, yellow!50,}]
+		{
+			50/ Yes,
+			21.7/ No,
+			28.3/ I don't know
+		}
+	\end{tikzpicture}
+	\captionof{figure}{AI and opportunities}
+\end{figure}
 The majority of English university students reported with 50\% that AI-driven tools offer opportuinities
 for enhancing learning experiences in the humanities. In addition to 28.3\% to report the
 ignorance of the opportunities that AI-driven tools offer. Whereas 21.7\% negatively reported
