@@ -58,25 +58,12 @@
 \newcommand{\resp}[2]{\begin{FlushLeft} \textbf{\textit{Response #1:}} \\\say{\textit{#2}} \\ \end{FlushLeft}}
 %box
 \newcommand{\checkbox}{\fbox{\rule{0pt}{0.4em}\hspace{0.4em}}}
+\newcommand{\circlebox}{%
+\tikz\draw[black, line width=0pt] (0,0) circle (0.5em);
+}
 %toc
 \addbibresource{References.bib}
 
-% quesntion appendix
-\newcommand{\createQuestion}[2]{%
-\noindent\textbf{#1}
-\bigskip
-
-
-\begin{tikzpicture}[scale=1.2]
-\foreach \i/\text in {#2} {
-\draw (0, -\i) rectangle (0.4, -\i-0.4);
-\node at (2, -\i-0.2) {\text};
-}
-\end{tikzpicture}
-\bigskip
-
-
-}
 % start of the document
 \begin{document}
 \input{cover/mycover}
