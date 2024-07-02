@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+# Define colors for printing
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+#MAGENTA='\033[0;35m'
+NC='\033[0m'
+
+# Function to print colored messages
+function cprintln() {
+    local color=$1
+    local message=$2
+    local nc=$NC
+    echo -e "${color}${message}${nc}"
+}
+
+# Function to check the success of an operation
+function checkop() {
+    local output="$1"
+    local wrong="$2"
+    local correct="$3"
+
+    if [ "$output" -ne 0 ]; then
+        cprintln "$RED" "$wrong"
+        exit "$output"
+    else
+        cprintln "$GREEN" "$correct"
+    fi
+}
+
+FONTS="ttf-ms-win11-auto"
+
+PACKAGES=(
+  "texlive-basic"
+  "texlive-fontsrecommended"
+  "texlive-latexrecommended"
+	"texlive-bibtexextra"
+	"texlive-langenglish"
+	"texlive-latexextra"
+	"texlive-fontsextra"
+	"texlive-binextra"
+	"texlive-luatex"
+	"texlive-xetex"
+  "texlive-latex"
+  "biber"
+)
+
+cprintln "$YELLOW" "Installing latex packages"
+
+sleep 2
+
+for package in "${PACKAGES[@]}"; do
+	sudo pacman -Sy "$package" --noconfirm
+  checkop "$?" "Failed to install $package" "Installed $package successfully"
+done 
+
+echo ""
+echo ""
+cprintln "$YELLOW" "Install fonts"
+sleep 2
+
+yay -Sy "$FONTS" --noconfirm
