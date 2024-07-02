@@ -40,7 +40,7 @@ done:
 	@rm -f *.aux *.log *.out *.toc *.xdv *.fls *.fdb_latexmk  *.bbl *.blg  *.bcf *.xml *.lof *.lot *.bbl >/dev/null 2>&1
 
 
-all: build clean
+all: build clean done
 
 pdf:
 	@printf "${MAGENTA}Remove The PDF...${NC}\n"
