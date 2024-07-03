@@ -5,20 +5,16 @@ MAGENTA=\033[0;35m
 NC=\033[0m # No Color
 
 # Default program
-PROGRAM = main.tex
-
-# @rm -f *.aux *.log *.out *.toc *.xdv *.fls *.fdb_latexmk  *.bbl *.blg  *.bcf *.xml >/dev/null 2>&1
+PROGRAM = src/main.tex
 
 # Compiler
 CC = latexmk
-XFLAGS = -pdf -jobname=AbderrahmanGouhmad  -f  -lualatex -halt-on-error
-# BIB = biber
-#BIBPRO = simple.bib
+XFLAGS = -pdf -jobname=AI_For_HE -f -lualatex -halt-on-error -bibtex
+
 # Usage: make custom_build PROGRAM=<custom_program.tex>
 build: $(PROGRAM)
 	@printf "${MAGENTA}Building custom program...${NC}\n"
 	@$(CC) $(XFLAGS) $(PROGRAM)
-	# @$(BIB) main 
 	@if [ $$? -eq 0 ]; then \
 		printf "${GREEN}Custom build completed${NC}\n"; \
 	else \
@@ -27,24 +23,22 @@ build: $(PROGRAM)
 
 clean:
 	@printf "${RED}Cleaning...${NC}\n"
-	@latexmk -c >/dev/null 2>&1
+	@latexmk -c >/dev/null 2>&1 || true
+	@rm -f *.aux *.log *.out *.toc *.xdv *.fls *.fdb_latexmk *.bbl *.blg *.bcf *.xml *.lof *.lot >/dev/null 2>&1 || true
 	@if [ $$? -eq 0 ]; then \
 		printf "${GREEN}Done!${NC}\n"; \
-		sleep 1; \
-		clear; \
 	else \
 		printf "${RED}Error!${NC}\n"; \
 	fi
 
 done:
-	@rm -f *.aux *.log *.out *.toc *.xdv *.fls *.fdb_latexmk  *.bbl *.blg  *.bcf *.xml *.lof *.lot *.bbl >/dev/null 2>&1
-
+	@rm -f *.aux *.log *.out *.toc *.xdv *.fls *.fdb_latexmk *.bbl *.blg *.bcf *.xml *.lof *.lot >/dev/null 2>&1 || true
 
 all: build clean done
 
 pdf:
-	@printf "${MAGENTA}Remove The PDF...${NC}\n"
-	@rm -f *.pdf >/dev/null 2>&1
+	@printf "${MAGENTA}Removing the PDF...${NC}\n"
+	@rm -f AI_For_HE.pdf >/dev/null 2>&1 || true
 	@if [ $$? -eq 0 ]; then \
 		printf "${GREEN}Done!${NC}\n"; \
 	else \

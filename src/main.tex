@@ -21,7 +21,7 @@
 \usepackage{graphicx} % for images
 % fonts:
 \usepackage{fontspec} % for font
-\setmainfont{Times New Roman} %fonts
+\setmainfont{QTGaromand} %fonts
 \usepackage{dirtytalk} % for quotation
 \usepackage{hyperref} % for hyperlinks
 %\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue pdftitle={Ai in higher education}} % color the links
@@ -61,25 +61,25 @@
 \tikz\draw[black, line width=0pt] (0,0) circle (0.5em);
 }
 %toc
-\addbibresource{References.bib}
+\addbibresource{src/References.bib}
 
 % start of the document
 \begin{document}
-\input{cover/mycover}
+\input{src/cover/mycover}
 \tableofcontents
 \listoftables
 \listoffigures
 \newpage
 \pagenumbering{roman}
-\input{firstpages/dedicat}
-\input{firstpages/acknowledgement}
-\input{firstpages/abstract}
+\input{src/firstpages/dedicat}
+\input{src/firstpages/acknowledgement}
+\input{src/firstpages/abstract}
 \pagenumbering{arabic}
-\input{chap1/chapter1}
-\input{chap2/chapter2}
-\input{chap3/chapter3}
-\input{chap4/chapter4}
-\input{chap5/chapter5}
+\input{src/chap1/chapter1}
+\input{src/chap2/chapter2}
+\input{src/chap3/chapter3}
+\input{src/chap4/chapter4}
+\input{src/chap5/chapter5}
 \printbibliography[heading=bibintoc, title=REFERENCES]
-\input{last/appendix}
+\input{src/last/appendix}
 \end{document}
