@@ -85,9 +85,8 @@ You can use TeX Live or MikTeX. Additionally, you need a text editor like TeXSho
 
 ## Compilation
 
-To compile the thesis, navigate to the `src/` directory and run the following command:
+To compile the thesis, run the following command:
 
 ```bash
-cd src
 make all
 ```
